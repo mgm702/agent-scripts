@@ -1,0 +1,23 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    guess_html_encoding (0.0.11)
+    nokogiri (1.19.0-arm64-darwin)
+      racc (~> 1.4)
+    racc (1.8.1)
+    reverse_markdown (3.0.2)
+      nokogiri
+    ruby-readability (0.7.3)
+      guess_html_encoding (>= 0.0.4)
+      nokogiri (>= 1.6.0)
+
+PLATFORMS
+  arm64-darwin-23
+
+DEPENDENCIES
+  nokogiri
+  reverse_markdown
+  ruby-readability
+
+BUNDLED WITH
+   2.4.10
