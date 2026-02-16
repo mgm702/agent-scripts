@@ -10,7 +10,7 @@ Work style: telegraph; noun-phrases ok; drop grammar; min tokens.
 - Use trash for deletes
 - Keep files <~500 LOC; split when bigger
 - Commits: Conventional Commits (feat|fix|refactor|build|ci|chore|docs|style|perf|test)
-- Editor: code <path>
+- Editor: e <path>
 - Prefer small, reviewable changes
 - Style: telegraph. Min tokens everywhere.
 
@@ -19,7 +19,6 @@ Work style: telegraph; noun-phrases ok; drop grammar; min tokens.
 - Safe by default: git status/diff/log first
 - Push only when user asks
 - Destructive ops forbidden unless explicit (reset --hard, clean, rm, restore...)
-- Use committer tool when available on PATH
 - Never delete/rename unexpected files; stop + ask
 - Multi-agent: always check git status/diff before editing
 - Small commits only
@@ -40,10 +39,6 @@ Work style: telegraph; noun-phrases ok; drop grammar; min tokens.
 
 ## Tools
 
-- committer (preferred for commits)
-- trash (for deletes)
-- browser-tools (when browser needed)
-- docs-list (when present)
 - gh (for GitHub operations)
 
 ## Code Style
