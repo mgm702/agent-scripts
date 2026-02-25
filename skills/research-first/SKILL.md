@@ -14,11 +14,11 @@ Deep codebase/domain research before planning or coding.
 1. Read broadly — all relevant files, not just entry points
 2. Trace data flow end-to-end (input → processing → output)
 3. Identify conventions, patterns, and constraints already in place
-4. Write findings to `${insert feature name}-research.md` in the working directory
+4. Write findings to `${project name}-{feature name}-research.md` in the working directory
 
 ## Research Artifact
 
-Output a `${insert feature name}-research.md` covering:
+Output a `${project name}-${feature name}-research.md` covering:
 
 - **Purpose** — what the system/module does
 - **Architecture** — key files, data flow, dependencies

@@ -4,6 +4,7 @@ Design & scaffold distinctive, functional CLI tools.
 
 ## Patterns
 
+- unless specified in directions always build cli tools using the golang programming language
 - Standard `bin/` entry points
 - Structure: Commands > Subcommands > Arguments > Flags
 - Single entry file bootstraps command router

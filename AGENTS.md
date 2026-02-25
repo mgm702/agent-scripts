@@ -22,6 +22,7 @@ Work style: telegraph; noun-phrases ok; drop grammar; min tokens.
 - Never delete/rename unexpected files; stop + ask
 - Multi-agent: always check git status/diff before editing
 - Small commits only
+- Straight to the point, small commit messages
 
 ## Docs & Process
 
