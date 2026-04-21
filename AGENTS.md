@@ -23,6 +23,9 @@ Work style: telegraph; noun-phrases ok; drop grammar; min tokens.
 - Multi-agent: always check git status/diff before editing
 - Small commits only
 - Straight to the point, small commit messages
+- no sub commit messages, only the top level commit
+- NEVER CO AUTHOR A COMMIT
+- never create a git commit; stop + ask before proceeding
 
 ## Docs & Process
 
