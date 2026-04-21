@@ -1,0 +1,6 @@
+{
+  "languages": {
+    ".rb": { "cmd": "bundle exec rubocop --autocorrect {{file}}" },
+    ".go": { "cmd": "gofmt -w {{file}}" }
+  }
+}
