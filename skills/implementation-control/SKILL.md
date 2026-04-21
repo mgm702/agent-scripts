@@ -1,3 +1,15 @@
+---
+name: Implementation Control
+description: Controlled execution with supervisor-style feedback for working through an approved plan without drift or scope creep.
+triggers:
+  - implement plan
+  - start implementation
+  - execute plan
+  - implement approved
+  - begin implementation
+  - work through plan
+---
+
 # Implementation Control
 
 Controlled execution and supervisor-style feedback during implementation.

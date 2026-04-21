@@ -1,5 +1,16 @@
-# Research First
+---
+name: Research First
+description: Deep codebase and domain research before planning or coding — produces a written research artifact as proof of understanding.
+triggers:
+  - research first
+  - investigate
+  - understand codebase
+  - unfamiliar with
+  - explore the code
+  - research before
+---
 
+# Research First
 Deep codebase/domain research before planning or coding.
 
 ## When to Use

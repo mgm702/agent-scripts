@@ -1,3 +1,15 @@
+---
+name: Create CLI
+description: Design and scaffold functional CLI tools; default language is Go unless the project specifies otherwise.
+triggers:
+  - create cli
+  - build cli
+  - command line tool
+  - new tool
+  - golang cli
+  - scaffold cli
+---
+
 # Create CLI
 
 Design & scaffold distinctive, functional CLI tools.

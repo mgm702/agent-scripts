@@ -1,3 +1,16 @@
+---
+name: DuckDuckGo Search
+description: Web search and content extraction via DuckDuckGo Lite — use when current information, documentation, or external references are needed.
+triggers:
+  - search the web
+  - look up
+  - find online
+  - web search
+  - current pricing
+  - latest docs
+  - search for
+---
+
 # DuckDuckGo Search
 
 Web search and content extraction via DuckDuckGo Lite. No API key needed.

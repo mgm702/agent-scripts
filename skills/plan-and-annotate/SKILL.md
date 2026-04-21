@@ -1,3 +1,15 @@
+---
+name: Plan and Annotate
+description: Produce a structured plan document with iterative annotation cycles before any implementation begins.
+triggers:
+  - make a plan
+  - plan this
+  - create plan doc
+  - plan before
+  - plan and annotate
+  - put together a plan
+---
+
 # Plan and Annotate
 
 Structured planning with iterative annotation before any implementation.
@@ -11,7 +23,7 @@ Structured planning with iterative annotation before any implementation.
 
 ## Plan Document
 
-Write a `${feature name from research.md}-plan.md` in the working directory containing:
+Write a `${project-name}-${feature name from research.md}-plan.md` in the working directory containing:
 
 - **Goal** — one-sentence outcome
 - **Approach** — high-level strategy with rationale
@@ -19,6 +31,7 @@ Write a `${feature name from research.md}-plan.md` in the working directory cont
 - **Trade-offs** — alternatives considered and why they were rejected
 - **Risks** — what could go wrong, mitigation strategies
 - **Out of scope** — explicitly list what this plan does NOT cover
+- **Todo List** — create a detailed checklist with phases and individual tasks
 
 ## Annotation Cycle
 
@@ -50,4 +63,3 @@ After plan approval, append a detailed checklist:
 - Never generate code during planning phase
 - Plan lives in a markdown file, not in conversation
 - Include code snippets in the plan for clarity, not as final implementation
-- Keep plan under 500 lines; split into sections if larger

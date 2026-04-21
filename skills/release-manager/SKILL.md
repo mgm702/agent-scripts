@@ -1,3 +1,15 @@
+---
+name: Release Manager
+description: Audit a project end-to-end and produce a release checklist covering deployment, third-party services, environment config, and go-live blockers.
+triggers:
+  - release checklist
+  - ship this
+  - production ready
+  - go live
+  - pre-release audit
+  - ready to deploy
+---
+
 # Release Manager
 Deep codebase research to determine everything needed to get a project into production.
 

@@ -1,3 +1,15 @@
+---
+name: GitHub
+description: Expert gh CLI usage for issues, PRs, code review, and repository automation.
+triggers:
+  - create PR
+  - open issue
+  - gh cli
+  - pull request
+  - github automation
+  - merge PR
+---
+
 # GitHub
 
 Expert `gh` CLI usage for issues, PRs, and automation.
