@@ -7,6 +7,8 @@ Centralized AI agent instructions and domain-specific skills. Source of truth fo
 ```
 agent-scripts/
 ├── AGENTS.md              # Core protocol: git safety, code style, quality rules
+├── setup/
+│   └── notion-mcp.rb      # One-time Notion MCP setup for Claude Code
 └── skills/
     ├── create-cli/          # CLI tool scaffolding patterns
     ├── duckduckgo-search/   # Web search & content extraction via DDG Lite
@@ -15,8 +17,19 @@ agent-scripts/
     ├── implementation-control/ # Controlled execution & progress feedback
     ├── plan-and-annotate/   # Structured planning before implementation
     ├── react-performance/   # React rendering audit & optimization
+    ├── release-manager/     # Pre-release audit & checklist generation
     └── research-first/      # Deep codebase/domain research before coding
     └── devops-agent/        # Devops project scaffolding patterns
+```
+
+## Setup
+
+### New machine
+
+Run the setup script to configure integrations for Claude Code:
+
+```bash
+ruby ~/code/projects/agent-scripts/setup/notion-mcp.rb
 ```
 
 ## Usage

@@ -58,6 +58,31 @@ After plan approval, append a detailed checklist:
 - Tasks map directly to plan steps
 - Mark tasks complete during implementation to track progress
 
+## Notion Sync
+
+After writing the local plan file, sync it to Notion if the MCP is available.
+
+**On creation:**
+1. Call `notion_create_page` with the parent page ID from MEMORY.md (`## Notion`)
+2. Title: `${feature name} Plan`
+3. Push the full markdown content as blocks
+4. Add YAML front matter to the top of the local `.md` file:
+   ```
+   ---
+   notion_page_id: <returned id>
+   notion_page_url: <returned url>
+   ---
+   ```
+
+**On annotation cycle update:**
+1. Read `notion_page_id` from the local file's front matter
+2. Delete the old Notion page via `notion_delete_page`
+3. Re-create the page with updated content and update front matter with new ID/URL
+
+**Rules:**
+- If Notion MCP is unavailable, skip silently — do not block the plan workflow
+- Local file is source of truth; Notion is a mirror
+
 ## Rules
 
 - Never generate code during planning phase

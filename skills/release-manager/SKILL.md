@@ -123,6 +123,31 @@ One paragraph describing what is being released, the target environment(s), and 
 Any additional context, open questions, or follow-up items discovered during research.
 ```
 
+## Notion Sync
+
+After writing `project-release.md`, sync it to Notion if the MCP is available.
+
+**On creation:**
+1. Call `notion_create_page` with the parent page ID from MEMORY.md (`## Notion`)
+2. Title: `Release: <Project Name>`
+3. Push the full markdown content as blocks
+4. Add YAML front matter to the top of the local file:
+   ```
+   ---
+   notion_page_id: <returned id>
+   notion_page_url: <returned url>
+   ---
+   ```
+
+**On checklist updates:**
+1. Read `notion_page_id` from front matter
+2. Delete the old Notion page via `notion_delete_page`
+3. Re-create with updated content and update front matter with new ID/URL
+
+**Rules:**
+- If Notion MCP is unavailable, skip silently
+- Local file is source of truth; Notion is a mirror
+
 ## Prompting Style
 - Be specific: name the exact environment variable, file path, or DNS record
 - Do not mark an item complete without evidence from the codebase or confirmed configuration

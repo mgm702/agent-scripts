@@ -32,6 +32,7 @@ Controlled execution and supervisor-style feedback during implementation.
 - The plan document is the source of truth for progress
 - Update todo checkboxes as tasks complete
 - Plan survives context compaction; conversation does not
+- After each phase completes: if the plan doc has `notion_page_id` front matter, delete the old Notion page, re-create it with updated content, and update front matter with the new ID/URL
 
 ## Feedback Style
 
