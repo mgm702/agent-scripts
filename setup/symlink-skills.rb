@@ -1,12 +1,19 @@
 #!/usr/bin/env ruby
-# Creates symlinks from ~/.claude/skills/ to each skill in this repo.
-# Run this on any new machine after cloning agent-scripts.
+# Creates symlinks from $CLAUDE_CONFIG_DIR/skills/ (or ~/.claude/skills/) to each
+# skill in this repo. Run this on any new machine after cloning agent-scripts.
+#
+# Usage:
+#   ruby setup/symlink-skills.rb
+#   CLAUDE_CONFIG_DIR=~/.claude-config/personal ruby setup/symlink-skills.rb
 
 require 'fileutils'
 
-SKILLS_SRC  = File.expand_path('../skills', __dir__)
-SKILLS_DEST = File.expand_path('~/.claude/skills')
+SKILLS_SRC = File.expand_path('../skills', __dir__)
 
+config_dir  = ENV['CLAUDE_CONFIG_DIR'] ? File.expand_path(ENV['CLAUDE_CONFIG_DIR']) : File.expand_path('~/.claude')
+SKILLS_DEST = File.join(config_dir, 'skills')
+
+puts "Using config dir: #{config_dir}"
 FileUtils.mkdir_p(SKILLS_DEST)
 
 skills = Dir.entries(SKILLS_SRC).reject { |e| e.start_with?('.') }.sort
