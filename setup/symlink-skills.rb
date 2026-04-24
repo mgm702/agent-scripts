@@ -12,15 +12,18 @@ FileUtils.mkdir_p(SKILLS_DEST)
 skills = Dir.entries(SKILLS_SRC).reject { |e| e.start_with?('.') }.sort
 
 skills.each do |skill|
-  src  = File.join(SKILLS_SRC, skill)
-  dest = File.join(SKILLS_DEST, skill)
+  src = File.join(SKILLS_SRC, skill, 'SKILL.md')
+  next unless File.exist?(src)
 
-  next unless File.directory?(src)
+  skill_dir = File.join(SKILLS_DEST, skill)
+  dest      = File.join(skill_dir, 'SKILL.md')
+
+  FileUtils.mkdir_p(skill_dir)
 
   if File.symlink?(dest)
     puts "~ #{skill} (already linked, skipping)"
   elsif File.exist?(dest)
-    puts "! #{skill} (real directory exists at destination, skipping)"
+    puts "! #{skill} (real file exists at destination, skipping)"
   else
     File.symlink(src, dest)
     puts "+ #{skill}"
