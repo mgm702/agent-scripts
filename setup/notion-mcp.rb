@@ -3,11 +3,6 @@
 # Prerequisites: create an integration at notion.so/profile/integrations
 #                and connect it to your Plans parent page.
 
-require 'json'
-require 'fileutils'
-
-SETTINGS_PATH = File.expand_path('~/.claude/settings.json')
-
 def prompt(message)
   print message
   $stdout.flush
@@ -27,26 +22,21 @@ abort 'Error: token required' if notion_token.empty?
 plans_parent_id = prompt('Plans parent page ID: ')
 abort 'Error: parent page ID required' if plans_parent_id.empty?
 
-mcp_entry = {
-  'command' => 'npx',
-  'args' => ['-y', '@notionhq/notion-mcp-server'],
-  'env' => { 'NOTION_TOKEN' => notion_token }
-}
+result = system(
+  'claude', 'mcp', 'add', 'notion',
+  '--scope', 'user',
+  '-e', "NOTION_TOKEN=#{notion_token}",
+  '--', 'npx', '-y', '@notionhq/notion-mcp-server'
+)
 
-FileUtils.mkdir_p(File.dirname(SETTINGS_PATH))
+abort 'Error: claude mcp add failed. Is Claude Code installed and in your PATH?' unless result
 
-settings = File.exist?(SETTINGS_PATH) ? JSON.parse(File.read(SETTINGS_PATH)) : {}
-settings['mcpServers'] ||= {}
-settings['mcpServers']['notion'] = mcp_entry
-
-File.write(SETTINGS_PATH, JSON.pretty_generate(settings))
 puts ''
-puts "✓ #{SETTINGS_PATH} updated"
-
+puts '✓ Notion MCP server registered with Claude Code'
 puts ''
 puts 'Add this to your project MEMORY.md:'
 puts ''
 puts '  ## Notion'
 puts "  - Plans parent page ID: #{plans_parent_id}"
 puts ''
-puts 'Then restart Claude Code to activate the Notion MCP server.'
+puts 'Run `claude mcp list` to verify the server is connected.'

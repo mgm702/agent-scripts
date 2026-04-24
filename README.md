@@ -26,9 +26,13 @@ agent-scripts/
 
 ### New machine
 
-Run the setup script to configure integrations for Claude Code:
+Run these after cloning the repo:
 
 ```bash
+# Link skills into Claude Code
+ruby ~/code/projects/agent-scripts/setup/symlink-skills.rb
+
+# Configure Notion MCP (requires a Notion integration token)
 ruby ~/code/projects/agent-scripts/setup/notion-mcp.rb
 ```
 
