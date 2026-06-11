@@ -111,8 +111,11 @@ Work through this decision tree top-to-bottom:
 
 ### Minimalist / Bootstrapped
 - Charge on day one — free tiers delay learning what people will pay
-- Raise prices before you think you're ready
-- One tier is fine to start; complexity comes later
+- **Zero-price effect:** there's a massive behavioral gap between free and $1 (people line up for free brownies; the line vanishes at one cent). Even a tiny price changes the dynamic and filters for real intent — never make free your default.
+- Raise prices before you think you're ready — pricing is not permanent, it's just another thing to iterate on. Start the discovery process; don't aim for perfection.
+- One tier is fine to start; add tiers (economy / business / first class) as you understand customer segments.
+- Free trials are table stakes — offer them, but always with a clear path to paid.
+- **Financial-independence math:** target monthly income ÷ price = customers needed. At one new customer per business day (~260/year), how long to get there? ($10/mo product, need $2,000/mo → 200 customers → under a year.)
 - Lifestyle math: target MRR ÷ conversion rate = traffic needed; work backwards
 
 ## Common Mistakes
