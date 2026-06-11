@@ -10,16 +10,24 @@ agent-scripts/
 ├── setup/
 │   └── notion-mcp.rb      # One-time Notion MCP setup for Claude Code
 └── skills/
-    ├── create-cli/          # CLI tool scaffolding patterns
-    ├── duckduckgo-search/   # Web search & content extraction via DDG Lite
-    ├── frontend-design/     # Production UI/UX & semantic HTML/CSS
-    ├── github/              # gh CLI workflows & automation
+    ├── ai-cost-comparision/    # LLM provider cost comparison & model selection
+    ├── code-review-and-quality/ # Multi-axis review of local changes before push
+    ├── create-cli/             # CLI tool scaffolding patterns
+    ├── devops-agent/           # AWS infra assessment & phased launch plan
+    ├── duckduckgo-search/      # Web search & content extraction via DDG Lite
+    ├── find-community/         # Find a community to build a business around
+    ├── github/                 # gh CLI workflows & automation
+    ├── idea-refine/            # Sharpen a raw idea into a one-pager for planning
     ├── implementation-control/ # Controlled execution & progress feedback
-    ├── plan-and-annotate/   # Structured planning before implementation
-    ├── react-performance/   # React rendering audit & optimization
-    ├── release-manager/     # Pre-release audit & checklist generation
-    └── research-first/      # Deep codebase/domain research before coding
-    └── devops-agent/        # Devops project scaffolding patterns
+    ├── marketing-plan/         # Minimalist content-first marketing plan
+    ├── mobile-developer/       # React Native, step-by-step with explanations
+    ├── mvp/                    # Build the smallest viable product, manual-first
+    ├── performance-optimization/ # Measure-first performance audit & fixes
+    ├── plan-and-annotate/      # Structured planning before implementation
+    ├── pricing-strategy/       # Pricing model, tier design & recommendation doc
+    ├── release-manager/        # Pre-release audit & checklist generation
+    ├── research-first/         # Deep codebase/domain research before coding
+    └── validate-idea/          # Validate demand by selling before building
 ```
 
 ## Setup
@@ -60,15 +68,24 @@ See ~/code/projects/agent-scripts/skills/react-performance/SKILL.md
 
 | Skill | Purpose |
 |-------|---------|
+| `ai-cost-comparision` | Compare LLM provider pricing and select a model to minimize spend |
+| `code-review-and-quality` | Multi-axis review (correctness, readability, architecture, security, perf) of local changes before pushing |
 | `create-cli` | Design & scaffold CLI tools with proper flags, output, and testing |
+| `devops-agent` | Assess AWS infra and produce a phased production-readiness launch plan |
 | `duckduckgo-search` | Web search & content extraction via DuckDuckGo Lite (no API key) |
-| `frontend-design` | Semantic HTML, accessible UI, Tailwind/CSS Modules, loading/error states |
+| `find-community` | Identify and evaluate communities to build a minimalist business around |
 | `github` | `gh` CLI workflows: issues, PRs, CI checks, releases |
+| `idea-refine` | Refine a raw idea into a sharp one-pager, then hand off to `plan-and-annotate` |
 | `implementation-control` | Controlled execution, quality gates, and supervisor-style feedback |
+| `marketing-plan` | Content-first marketing plan that builds an audience before spending on ads |
+| `mobile-developer` | React Native development, step-by-step with explanations |
+| `mvp` | Build the smallest viable product — manual, then processized, then productized |
+| `performance-optimization` | Measure-first audit & fixes across Go, Ruby, React, RN, Python, C |
 | `plan-and-annotate` | Structured plan docs with iterative annotation before implementation |
-| `react-performance` | Audit re-renders, memo/callback optimization, virtualization |
+| `pricing-strategy` | Select a pricing model, design tiers, and produce a recommendation doc |
+| `release-manager` | Pre-release audit and go-live checklist generation |
 | `research-first` | Deep codebase/domain research with written findings before planning/coding |
-| `devops-agent` | Design & scaffold projects infrastructure using proper Devops configs |
+| `validate-idea` | Validate a business idea by selling, not building, before committing |
 
 ## Adding Skills
 
