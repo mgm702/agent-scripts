@@ -165,12 +165,18 @@ After writing the local plan file, sync it to Notion using the plan sync script.
 **Primary — Stop hook (automatic):**
 `~/code/projects/agent-scripts/scripts/notion_plan_sync.rb` runs as a Claude Code Stop hook after every turn. It detects modified `*-plan.md` files via `git diff` and syncs them automatically. No manual action needed.
 
+**Setup — provide the Notion token via env var (required once):**
+The script reads `NOTION_TOKEN` from the environment. Export it in your shell for the current session:
+```bash
+export NOTION_TOKEN=ntn_your_integration_token_here
+```
+To persist it across sessions, add that line to your shell profile (`~/.zshrc` or `~/.bashrc`) or your Claude Code hook environment. Never hardcode the token in this file.
+
 **Fallback — call the script directly** (use this if the hook didn't fire or you need to force a sync):
 ```bash
-NOTION_TOKEN=ntn_your_integration_token_here \
-  ruby ~/code/projects/agent-scripts/scripts/notion_plan_sync.rb \
-  path/to/plan.md
+ruby ~/code/projects/agent-scripts/scripts/notion_plan_sync.rb path/to/plan.md
 ```
+The script aborts with `NOTION_TOKEN env var not set` if the variable is missing.
 
 **How the script works:**
 - On first sync: creates a new Notion page under the correct project parent, writes `notion_page_id` and `notion_page_url` into the plan file's YAML front matter
