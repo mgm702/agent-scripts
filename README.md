@@ -42,9 +42,16 @@ Run these after cloning the repo:
 # Link skills into Claude Code
 ruby ~/code/projects/agent-scripts/setup/symlink-skills.rb
 
+# Install hooks into settings.json (coding-standards guardrails on every edit)
+ruby ~/code/projects/agent-scripts/setup/install-hooks.rb
+
 # Configure Notion MCP (requires a Notion integration token)
 ruby ~/code/projects/agent-scripts/setup/notion-mcp.rb
 ```
+
+All three respect `CLAUDE_CONFIG_DIR` (default `~/.claude`) and are idempotent —
+re-run any of them safely. `install-hooks.rb` merges into `settings.json` without
+touching existing hooks, MCP servers, or plugins.
 
 ## Usage
 
