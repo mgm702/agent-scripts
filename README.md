@@ -12,6 +12,7 @@ agent-scripts/
 └── skills/
     ├── ai-cost-comparision/    # LLM provider cost comparison & model selection
     ├── code-review-and-quality/ # Multi-axis review of local changes before push
+    ├── coding-standards/       # Core guardrails to read every time before coding
     ├── create-cli/             # CLI tool scaffolding patterns
     ├── devops-agent/           # AWS infra assessment & phased launch plan
     ├── duckduckgo-search/      # Web search & content extraction via DDG Lite
@@ -22,6 +23,7 @@ agent-scripts/
     ├── marketing-plan/         # Minimalist content-first marketing plan
     ├── mobile-developer/       # React Native, step-by-step with explanations
     ├── mvp/                    # Build the smallest viable product, manual-first
+    ├── object-oriented-design-patterns/ # SOLID + GoF patterns reference
     ├── performance-optimization/ # Measure-first performance audit & fixes
     ├── plan-and-annotate/      # Structured planning before implementation
     ├── pricing-strategy/       # Pricing model, tier design & recommendation doc
@@ -70,6 +72,7 @@ See ~/code/projects/agent-scripts/skills/react-performance/SKILL.md
 |-------|---------|
 | `ai-cost-comparision` | Compare LLM provider pricing and select a model to minimize spend |
 | `code-review-and-quality` | Multi-axis review (correctness, readability, architecture, security, perf) of local changes before pushing |
+| `coding-standards` | Core guardrails (the four rules) to read every time before writing or editing code |
 | `create-cli` | Design & scaffold CLI tools with proper flags, output, and testing |
 | `devops-agent` | Assess AWS infra and produce a phased production-readiness launch plan |
 | `duckduckgo-search` | Web search & content extraction via DuckDuckGo Lite (no API key) |
@@ -80,6 +83,7 @@ See ~/code/projects/agent-scripts/skills/react-performance/SKILL.md
 | `marketing-plan` | Content-first marketing plan that builds an audience before spending on ads |
 | `mobile-developer` | React Native development, step-by-step with explanations |
 | `mvp` | Build the smallest viable product — manual, then processized, then productized |
+| `object-oriented-design-patterns` | SOLID principles and GoF patterns — when to reach for each, and when not to |
 | `performance-optimization` | Measure-first audit & fixes across Go, Ruby, React, RN, Python, C |
 | `plan-and-annotate` | Structured plan docs with iterative annotation before implementation |
 | `pricing-strategy` | Select a pricing model, design tiers, and produce a recommendation doc |
