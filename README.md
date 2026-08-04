@@ -29,7 +29,7 @@ agent-scripts/
     ├── pricing-strategy/       # Pricing model, tier design & recommendation doc
     ├── release-manager/        # Pre-release audit & checklist generation
     ├── research-first/         # Deep codebase/domain research before coding
-    └── validate-idea/          # Validate demand by selling before building
+    └── validate-idea/          # Market research + validate by selling before building
 ```
 
 ## Setup
@@ -96,7 +96,7 @@ See ~/code/projects/agent-scripts/skills/react-performance/SKILL.md
 | `pricing-strategy` | Select a pricing model, design tiers, and produce a recommendation doc |
 | `release-manager` | Pre-release audit and go-live checklist generation |
 | `research-first` | Deep codebase/domain research with written findings before planning/coding |
-| `validate-idea` | Validate a business idea by selling, not building, before committing |
+| `validate-idea` | Automated market research with evidence-graded scoring, then validate by selling, not building |
 
 ## Adding Skills
 
