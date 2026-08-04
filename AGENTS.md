@@ -31,6 +31,7 @@ Work style: telegraph; noun-phrases ok; drop grammar; min tokens.
 
 - Open relevant docs before coding
 - Update docs when behavior changes
+- Idea-validation output files: name exactly `validation-report.md` (or suffix `-validation-report.md`) — global gitignore matches `*validation-report.md`; stays untracked, never commit
 - Before handoff: run full gate (lint + tests + typecheck)
 - CI red -> fix until green
 
