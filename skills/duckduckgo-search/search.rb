@@ -42,6 +42,10 @@ def search_ddg(query, num_results)
     "User-Agent" => "Mozilla/5.0 (compatible; AgentScript/1.0)"
   })
 
+  unless response.is_a?(Net::HTTPOK)
+    abort "search.rb: DuckDuckGo returned HTTP #{response.code} (rate-limited or blocked) — retry later."
+  end
+
   doc = Nokogiri::HTML(response.body)
   results = []
 

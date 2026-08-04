@@ -52,6 +52,7 @@ ruby content.rb <url>               # readable markdown output
 ## Notes
 
 - Uses DuckDuckGo Lite (HTML-only endpoint); no API key or account required
+- Rate limiting: DDG Lite answers blocked requests with HTTP 202 + a challenge page; search.rb aborts with an error on stderr (exit 1) so this is never mistaken for a genuinely empty result
 - Content extraction uses Readability + ReverseMarkdown for clean output
 - 15s timeout on all HTTP requests; follows up to 3 redirects
 - Sponsored results are automatically filtered out
