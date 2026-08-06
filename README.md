@@ -87,15 +87,19 @@ See ~/code/projects/agent-scripts/skills/react-performance/SKILL.md
 | `github` | `gh` CLI workflows: issues, PRs, CI checks, releases |
 | `idea-refine` | Refine a raw idea into a sharp one-pager, then hand off to `plan-and-annotate` |
 | `implementation-control` | Controlled execution, quality gates, and supervisor-style feedback |
+| `kill-code` | Evidence-based dead-code elimination with git-safe deletion batches |
 | `marketing-plan` | Content-first marketing plan that builds an audience before spending on ads |
 | `mobile-developer` | React Native development, step-by-step with explanations |
+| `morning-metrics` | Daily project-scoped business + infra dashboard (Stripe, Mercury, AWS, Mixpanel, Sentry, Firecrawl, scrapers) as one HTML page |
 | `mvp` | Build the smallest viable product — manual, then processized, then productized |
 | `object-oriented-design-patterns` | SOLID principles and GoF patterns — when to reach for each, and when not to |
 | `performance-optimization` | Measure-first audit & fixes across Go, Ruby, React, RN, Python, C |
 | `plan-and-annotate` | Structured plan docs with iterative annotation before implementation |
 | `pricing-strategy` | Select a pricing model, design tiers, and produce a recommendation doc |
+| `product-launch` | Launch-day distribution checklist across PH, HN, Reddit, social, and owned audiences |
 | `release-manager` | Pre-release audit and go-live checklist generation |
 | `research-first` | Deep codebase/domain research with written findings before planning/coding |
+| `sales-bumps` | Detect cold email leads and draft bump messages (never auto-send) |
 | `validate-idea` | Automated market research with evidence-graded scoring, then validate by selling, not building |
 
 ## Adding Skills

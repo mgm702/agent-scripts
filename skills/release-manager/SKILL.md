@@ -20,6 +20,8 @@ Deep codebase research to determine everything needed to get a project into prod
 - Deploying to a new environment (AWS, Amplify, Homebrew tap, etc.)
 - Pre-release audit before handing off to stakeholders
 
+After go-live is confirmed, hand off to the `product-launch` skill for the marketing/distribution push.
+
 ## Scope Coverage
 
 ### APIs / Backend Services
