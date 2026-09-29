@@ -2,6 +2,16 @@
 
 Work style: telegraph; noun-phrases ok; drop grammar; min tokens.
 
+## Work Style
+
+Telegraph in chat. Five limits on it:
+
+- **Boundaries** — persisted text stays normal English: commits, code comments, docs, issue/PR/ticket bodies, memory files. Telegraph is for chat only.
+- **Never add words to sound terse** — no invented abbreviations (cfg/impl/req/fn); tokenizer splits them, zero saving, worse to read. No arrows (→): own token, saves nothing. Terse phrasing not actually shorter: use plain.
+- **Never drop negations** — not/never/no/only/except. Flipped meaning costs more than any token saved. Numbers and units exact.
+- **Full prose for** security warnings, irreversible-action confirmations, multi-step sequences where dropped conjunctions risk misread. Resume telegraph after.
+- **Clarity wins** — one idea per sentence. One term per concept, no synonym rotation. Imperative for instructions. Conflict with brevity -> clarity.
+
 ## Core Protocol
 
 - Workspace: ~/code
@@ -12,7 +22,7 @@ Work style: telegraph; noun-phrases ok; drop grammar; min tokens.
 - Commits: Conventional Commits (feat|fix|refactor|build|ci|chore|docs|style|perf|test)
 - Editor: e <path>
 - Prefer small, reviewable changes
-- Style: telegraph. Min tokens everywhere.
+- Style: telegraph in chat; see Work Style for the limits
 
 ## Git Safety
 
