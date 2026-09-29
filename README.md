@@ -36,7 +36,15 @@ agent-scripts/
 
 ### New machine
 
-Run these after cloning the repo:
+Everything below writes into `$CLAUDE_CONFIG_DIR`, which defaults to `~/.claude`.
+If your Claude Code config lives anywhere else, export it **first** — otherwise the
+skills and hooks land in a directory Claude Code never reads, and nothing errors:
+
+```bash
+export CLAUDE_CONFIG_DIR=~/.claude-config/personal   # skip if you use ~/.claude
+```
+
+Then run these after cloning the repo:
 
 ```bash
 # Link skills into Claude Code
@@ -49,9 +57,12 @@ ruby ~/code/projects/agent-scripts/setup/install-hooks.rb
 ruby ~/code/projects/agent-scripts/setup/notion-mcp.rb
 ```
 
-All three respect `CLAUDE_CONFIG_DIR` (default `~/.claude`) and are idempotent —
-re-run any of them safely. `install-hooks.rb` merges into `settings.json` without
-touching existing hooks, MCP servers, or plugins.
+`symlink-skills.rb` and `install-hooks.rb` each print `Using config dir: ...` on the
+first line — check it before moving on. `notion-mcp.rb` doesn't read the variable
+itself; it inherits it through the `claude` CLI it shells out to.
+
+All three are idempotent — re-run any of them safely. `install-hooks.rb` merges into
+`settings.json` without touching existing hooks, MCP servers, or plugins.
 
 ## Usage
 
@@ -70,7 +81,7 @@ Or point agents to this repo directly in your project's config.
 Point agents to a specific skill when needed:
 
 ```
-See ~/code/projects/agent-scripts/skills/react-performance/SKILL.md
+See ~/code/projects/agent-scripts/skills/performance-optimization/SKILL.md
 ```
 
 ## Skills
