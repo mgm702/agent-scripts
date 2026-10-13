@@ -79,32 +79,95 @@ Each vertical slice delivers working, testable functionality.
 
 ## Task Structure
 
-Each task in the Todo List follows this structure:
+### The granularity bar
+
+**Write every task so a junior developer or a weak model can execute it without judgment.**
+
+That is the bar, and it is not the same as "a competent engineer could figure this out". The
+implementer may be a model that follows directions literally, does not push back, does not
+notice a missing step, and will invent something plausible rather than stop. Anything you leave
+implicit, it will fill in — wrongly, confidently, and in a way that looks finished.
+
+So a task is not done being written until it answers all of these without the reader thinking:
+
+| | |
+|---|---|
+| **Where** | Exact file paths, created or edited. Not "the auth module" |
+| **What exactly** | Function signatures, type definitions, SQL DDL, env var names, route paths — written out |
+| **In what order** | Numbered steps. "Do A, then B" when B depends on A |
+| **Against what** | The files to read *before* starting, with line numbers where it helps |
+| **How to know it worked** | A **Done when** checklist of observable facts, not "it works" |
+| **With what command** | The literal command to run, copy-pasteable |
+| **What not to do** | An explicit **Do not** list wherever a plausible wrong turn exists |
+
+**Include real code in the plan.** Not the finished implementation — the shape: the interface,
+the type, the migration SQL, the table of values. A weak implementer handed a signature writes
+the right function; handed a description, it invents one.
+
+**Write the contract as data where you can.** A permission matrix, a field allowlist, a state
+table — put it in the plan as a table and say "implement exactly this". Then the test is
+"assert every cell", which is checkable by someone who does not understand the domain.
+
+**State what reality is, so a mismatch is loud.** "`requireAdmin` is wired to zero routes —
+`grep` finds it only in its own test." If that stops being true, the implementer notices instead
+of quietly working around it. Add a standing rule to the list: *if reality contradicts the plan,
+stop and report it — do not improvise.*
+
+### Task template
 
 ```markdown
-## Task [N]: [Short descriptive title]
+### Task [N]: [Short descriptive title]
 
-**Description:** One paragraph explaining what this task accomplishes.
+**Description:** One paragraph: what this accomplishes and why it exists.
 
-**Acceptance criteria:**
-- [ ] [Specific, testable condition]
-- [ ] [Specific, testable condition]
+**Before you start:** Read `path/to/file.ts` (lines X–Y) — [the specific thing to notice].
+[Any fact about the current state that the steps depend on.]
 
-**Verification:**
-- [ ] Tests pass: `npm test -- --grep "feature-name"`
-- [ ] Build succeeds: `npm run build`
-- [ ] Manual check: [description of what to verify]
+**Steps:**
+1. Create `exact/path.ts`:
+   ```ts
+   export function exactSignature(arg: Type): ReturnType;
+   ```
+2. [Next step, with the values/SQL/route written out]
+3. [...]
 
-**Dependencies:** [Task numbers this depends on, or "None"]
+**Done when:**
+- [ ] [Observable fact someone can check without understanding the design]
+- [ ] [Another]
 
-**Files likely touched:**
-- `src/path/to/file.ts`
-- `tests/path/to/test.ts`
+**Do not:** [the plausible wrong turn, and one clause on why]
 
-**Estimated scope:** [Small: 1-2 files | Medium: 3-5 files | Large: 5+ files]
+**Verification:** `the exact command`
+
+**Files:** `path/a.ts`, `path/b.test.ts`
+
+**Dependencies:** [Task numbers, or "none"] · **Scope:** [XS|S|M|L]
 ```
 
-Each task should be a single atomic change that maps directly to a plan step. Mark tasks complete during implementation to track progress.
+Each task should be a single atomic change that maps directly to a plan step. Mark tasks
+complete during implementation to track progress.
+
+### Standing rules block
+
+Put these once at the top of the Todo List, not in each task. A weak implementer needs the
+guardrails stated, because it will not supply them:
+
+```markdown
+> **Rules for every task, without exception:**
+> 1. Do not start a task whose dependencies are unchecked.
+> 2. Run the full lint + build gate before marking a task done.
+> 3. Never widen scope. If a task needs a file it does not list, stop and ask.
+> 4. Never commit. Leave changes in the working tree.
+> 5. Never weaken a test to make it pass. A failing test is information.
+> 6. If reality contradicts this plan, stop and report it. Do not improvise around it.
+```
+
+### Group tasks, and gate the groups
+
+Past roughly ten tasks, a flat list stops being navigable. Group them by what they deliver
+("the model", "the boundary", "the surface") and put a **review with human** checkpoint between
+groups. Mark which checkpoints are security or schema gates — those are the ones where a weak
+implementer proceeding unreviewed does real damage.
 
 ## Task Sizing and Checkpoints
 
@@ -206,6 +269,17 @@ The script aborts with `NOTION_TOKEN env var not set` if the variable is missing
 - No checkpoints between tasks
 - Dependency order isn't considered
 
+Granularity red flags — each one means a weak implementer will guess:
+
+- A step that names a concept instead of a path ("update the auth layer")
+- A new function with no signature written out
+- A migration with no SQL
+- "Add tests" with no named cases
+- "Verify it works" with no command
+- A rule stated in the Approach section but not repeated in the task that must honour it
+- A task where the reader must infer the order of steps
+- No **Do not** anywhere in a task that has an obvious tempting shortcut
+
 ## Verification
 
 Before starting implementation, confirm:
@@ -216,6 +290,16 @@ Before starting implementation, confirm:
 - [ ] No task touches more than ~5 files
 - [ ] Checkpoints exist between major phases
 - [ ] The human has reviewed and approved the plan
+
+Then the granularity check — **read one task as if you knew nothing about the project**:
+
+- [ ] Could you start it from the task alone, without reading the rest of the plan?
+- [ ] Is every file path literal, and every new signature written out?
+- [ ] Could someone who does not understand the feature tell whether it is done?
+- [ ] Is there a command to run, not a description of testing?
+- [ ] Does it say what *not* to do where a shortcut exists?
+
+If any answer is no, the task is a description, not an instruction. Expand it.
 
 ## Rules
 
